@@ -80,12 +80,16 @@ PROPS vs STATE
 | props are used to pass data and event handlers to its children components
 | state is used to store the data of the components that has to be rendered to the view
 
-props are immutable - Once set, props cannot be changed
-state holds the data and can change over time
+| props are immutable - Once set, props cannot be changed
+| state holds the data and can change over time
 
-props can be used in both functional and class components
-state can only be used in class components
+| props can be used in both functional and class components
+| state can only be used in class components
 
-props are set by the parent component for the children components
-state is generally updated by event handlers
+| props are set by the parent component for the children components
+| state is generally updated by event handlers
+
+
+setState() can be updated in response to event handlers, server responses or props changes. This is done using setState Method
+setState() method enqueues all the updates made to the component state and intruct React to re-render the component and it's children with the updated state
 

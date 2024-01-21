@@ -7,12 +7,17 @@ import Counter from './components/Counter'
 import ParentComp from './components/ParentComp'
 import ClassProps from './props/ClassProps'
 import FunctionProps from './props/FunctionProps'
+import MenuApp from './state/MenuApp'
 
 function App() {
-
+  // styles = {
+  //   fontStyle: "bold",
+  //   color: "teal"
+  // }
   return (
     <>
-     <h1>Hello Welcome to my Self Learning</h1>
+    <MenuApp/>
+     {/* <h1>Hello Welcome to my Self Learning</h1>
      <h1>This is About Component</h1>
      <FC/>
      <ClassComp/>
@@ -27,7 +32,7 @@ function App() {
       <button>Click</button>
      </ClassProps>
      <ClassProps name="Muarofah " place="PlaceX"/>
-     <FunctionProps name="Isna Ayu Muarofah" place="PlaceA"/>
+     <FunctionProps name="Isna Ayu Muarofah" place="PlaceA"/> */}
     </>
   )
 }
