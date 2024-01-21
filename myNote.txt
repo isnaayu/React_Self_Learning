@@ -1,0 +1,91 @@
+What Are component?
+component are the building block of a react application that represent a part of the user interface
+- Re-Usability => a component used in one area of the application can be resued in another area. This helps speed up the development process
+- Nested Component => a component can containt several other componennts
+- Render Method => in its minimal form, a component must define a render method that specifies how the component renders to the DOM
+- Passing Properties => a component can also receive props. These are Properties passed by its parent to specify value
+
+
+Types of components
+Stateless Component 
+- They are Javascript functions
+- they are return HTML
+- Can be Contained in a .js or .jsx file
+
+Stateful Component
+- Regular classes that extend the componennt class
+- they must containt a render method that returns HTML
+- Can be contained in a .js or .jsx file
+
+
+Nesting Component
+- Component have to be nested into the main component using import and exposrt keywords
+---- Export => feature is used to export a particular module(file) and use it in another module(file) 
+---- import => feature is used to import a particular module(file) and use it in the existing module(file)
+
+Default Export and Import
+---- Export default is used to export only one object(function, variable, class) from the file. There can only be one default export per file
+----- In order to Import the default Export from a file, we can use only the addresss and use the keyword import before it
+----- A default exported object can be renamed while importing. However, while defining the component in the render method. the same name given while importing must be used
+
+consider a class component with multiple class objects
+
+Named Export and Import
+- A named Export or just export can be used to export multiple objects from a file.  There can be several named from a single file
+
+Higher Order & Pure components
+- Higher order components => is a function that takes a componennt and returns a new componennt. it facilitates reusing of component logic
+=> const NewComponent = higherOrderComponent(originalComponent)
+- Pure Components => is the base class for React components React.PureComponent is a variation of React.Component class and does a shallow comparison of props and State. A React Component can be considered pure if it renders the same output for the same state and props
+------ Shallow Comparioson checks for equality. in case of scalar attributes, it only compares their values and in case of objects, it only compares their references
+Conclusions : Pure Components Optimize React Code and Improve Performance
+
+Components - LIFECYCLE
+----------- MOUNTING 
+- componentWillMount()  => is called immediately before the initial rendering occurs
+- render() 
+- componentDidMount() => is invoked after React inserts the component into the DOM
+
+------------ UPDATING
+1. ComponentWillReceiveProps() => is called when a component receives props
+1. setState() => is called when state in the Properties changes
+2. shouldComponentUpdate() => decides whether the component state should trigger a re-render or not
+3. componentWillUpdate() => is invoked before rendering
+4. render() 
+5. componentDidUpdate() => is called after react updates the DOM
+
+------------- UNMOUNTING
+- componentWillUnmount() => is called while unmounting the component. it performs any clean up necesarry
+
+
+----------------------------------------------------------
+------- PROPS
+- Props, short for Properties, allow the user to pass arguments or data to components
+- Properties help make components more dynamic
+- Props are passed to components in the way similar to that of HTML-tag attributes
+- props in a component are read-only and cannot be changed
+- props assigned by the parent to do children component. and to the children components cannot make any changes to this props
+
+------- STATE
+- A State is an object that stores the values of properties belonging to a component that could change over a period of time
+- A state can be modified basedd on the user action or network changes
+- Every time the state of an object changes, React re-renders the component to the browser
+- The state object is initialized in the constructor
+- The State object can store multiple properties
+- this.setState() is used to change the value of the state object
+- setState() function performs a shallow merge between the new and the previous state
+
+
+PROPS vs STATE
+| props are used to pass data and event handlers to its children components
+| state is used to store the data of the components that has to be rendered to the view
+
+props are immutable - Once set, props cannot be changed
+state holds the data and can change over time
+
+props can be used in both functional and class components
+state can only be used in class components
+
+props are set by the parent component for the children components
+state is generally updated by event handlers
+
